@@ -1,0 +1,24 @@
+<%- include('./layout/header') %>
+
+
+<% data.forEach(data=>{ %>
+
+    <div>
+        <h2><%=data.productname%></h2>
+        <h3><%=data.price%></h3>
+        <img src="<%=data.img%>" alt="">
+        <p><%=data.descrip%></p>
+
+        <form action="/savetodb" method="POST">
+            <input type="hidden" name="productname" value="<%=data.productname%>">
+            <input type="hidden" name="price" value="<%=data.price%>">
+            <input type="hidden" name="img" value="<%=data.img%>">
+            <input type="hidden" name="descrip" value="<%=data.descrip%>">
+            <button type="submit" >Add to my cards</button>
+            
+        </form>
+    </div>
+
+    <% }) %>
+
+<%- include('./layout/footer') %>

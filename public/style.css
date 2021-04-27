@@ -1,0 +1,31 @@
+main{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+div{
+    border: 2px solid purple;
+    margin: 2%;
+    padding: 1%;
+    width: 500px;
+    height:700px;
+    text-align: center;
+    background-color: antiquewhite;
+}
+
+p{
+    width: 470px;
+    height: 100px;
+    overflow: scroll;
+}
+
+button{
+    margin: 2%;
+    padding: 2%;
+}
+
+a{
+    text-decoration: none;
+    display: block;
+}

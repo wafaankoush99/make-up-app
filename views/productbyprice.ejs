@@ -1,0 +1,15 @@
+<%- include('./layout/header') %>
+
+
+<% data.forEach(data=>{ %>
+
+    <div>
+        <h2><%=data.productname%></h2>
+        <h3><%=data.price%></h3>
+        <img src="<%=data.img%>" alt="">
+        <p><%=data.descrip%></p>
+    </div>
+
+    <% }) %>
+
+<%- include('./layout/footer') %>
