@@ -13,14 +13,14 @@ app.use(methodOverride('_method'));
 app.use(express.static('./public'));
 app.set('view engine', 'ejs');
 // const client = new pg.Client(process.env.DATABASE_URL);
-const client = new pg.Client({
-    connectionString: process.env.DATABASE_URL,
-    ssl: { rejectUnauthorized: false }
-});
 // const client = new pg.Client({
 //     connectionString: process.env.DATABASE_URL,
-//     //   ssl: process.env.LOCALLY ? false : {rejectUnauthorized: false}
+//     ssl: { rejectUnauthorized: false }
 // });
+const client = new pg.Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: process.env.LOCALLY ? false : { rejectUnauthorized: false }
+});
 const PORT = process.env.PORT || 7000;
 
 
@@ -77,7 +77,15 @@ app.get('/mycards', (req, res) => {
     let sql = 'select * from makeup';
     client.query(sql)
         .then(result => {
-            res.render('mycards', { data: result.rows });
+            if (result) {
+                res.render('mycards', { data: result.rows });
+            }
+
+            // else (!result) {
+            //     // res.send('No Products in Your Card');
+            //     // let result = ['No Products in Your Card'];
+            //     // res.render('mycards', { empty: result });
+            // }
         })
         .catch(err => {
             res.render('err', { err: err });

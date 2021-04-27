@@ -1,13 +1,13 @@
 <%- include('./layout/header') %>
 
 
-<div>
+<section>
     <form action="/productbyprice" method="POST">
-    <input type="text" name="brand" >
-    <input type="text" name="greater" >
-    <input type="text" name="less" >
+    Search about a brand : <input type="text" name="brand" >
+    price greater than: <input type="number" name="greater" >
+    price less than: <input type="number" name="less" >
     <button type="submit" >Search</button>
     </form>
-</div>
+</section>
 
 <%- include('./layout/footer') %>
