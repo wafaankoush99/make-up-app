@@ -12,11 +12,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('./public'));
 app.set('view engine', 'ejs');
-const client = new pg.Client(process.env.DATABASE_URL);
-// const client = new pg.Client({
-//     connectionString: process.env.DATABASE_URL,
-//     //  ssl: { rejectUnauthorized: false }
-// });
+// const client = new pg.Client(process.env.DATABASE_URL);
+const client = new pg.Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
+});
 // const client = new pg.Client({
 //     connectionString: process.env.DATABASE_URL,
 //     //   ssl: process.env.LOCALLY ? false : {rejectUnauthorized: false}
@@ -25,10 +25,7 @@ const PORT = process.env.PORT || 7000;
 
 
 app.get('/home', (req, res) => {
-    res.render('home')
-        .catch(err => {
-            res.render('err', { err: err });
-        });
+    res.render('home');
 });
 
 app.post('/productbyprice', (req, res) => {
