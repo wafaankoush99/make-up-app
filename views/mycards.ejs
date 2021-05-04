@@ -2,17 +2,34 @@
 
 
 
-<% data.forEach(data=>{ %>
+<% if (data.length > 0) { %>
 
-    <div>
+   <h2>Products in Card</h2>
+   <section class="productsSection">
+
+ <% data.forEach(data=>{ %>
+
+    <div class="myCardsDiv">
+      <img src="<%=data.img%>" alt="">
+
         <h2><%=data.productname%></h2>
-        <h3><%=data.price%></h3>
-        <img src="<%=data.img%>" alt="">
+        <h3 class="myCardPrice">Price: <%=data.price%></h3>
 
-        <a href="/productdetails/<%= data.id%>">Show Details</a>
+        <a class="detailsAncor" href="/productdetails/<%= data.id%>">VIEW DETAILS</a>
+
 
     </div>
 
-    <% }) %>
+    <% })
+ } %>
+
+ <% if (data.length === 0) { %>
+ 
+    <h1 class="noProducts"> No Products in Your Card ㄟ( ▔, ▔ )ㄏ </h1>
+
+ <% } %>
+
+</section>
+
 
 <%- include('./layout/footer') %>

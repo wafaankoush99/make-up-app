@@ -19,7 +19,7 @@ app.set('view engine', 'ejs');
 // });
 const client = new pg.Client({
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.LOCALLY ? false : { rejectUnauthorized: false }
+    // ssl: process.env.LOCALLY ? false : { rejectUnauthorized: false }
 });
 const PORT = process.env.PORT || 7000;
 
@@ -77,15 +77,7 @@ app.get('/mycards', (req, res) => {
     let sql = 'select * from makeup';
     client.query(sql)
         .then(result => {
-            if (result) {
-                res.render('mycards', { data: result.rows });
-            }
-
-            // else (!result) {
-            //     // res.send('No Products in Your Card');
-            //     // let result = ['No Products in Your Card'];
-            //     // res.render('mycards', { empty: result });
-            // }
+            res.render('mycards', { data: result.rows });
         })
         .catch(err => {
             res.render('err', { err: err });
@@ -105,8 +97,7 @@ app.get('/productdetails/:id', (req, res) => {
         });
 });
 
-/* <form action="/update/<%= data.id%>?_method=put" method="POST" > */
-// (productname, price , img, descrip)
+
 
 app.put('/update/:id', (req, res) => {
     let sql = 'update makeup set productname=$1,price=$2,img=$3,descrip=$4 where id =$5 ;';

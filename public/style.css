@@ -1,51 +1,218 @@
-main{
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300&display=swap');
+body{
+    margin: 0;
+    font-family: 'Noto Sans SC', sans-serif;
+}
+
+.fisrtHeaderDiv{
+background-image: url(https://wtop.com/wp-content/uploads/2019/12/makeup-stock-getty.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+width: inherit;
+height: 350px;
+}
+
+.fisrtHeaderDiv{
+    text-align: center;
+    line-height: 175px;
+
+}
+
+.fisrtHeaderDiv h1, .fisrtHeaderDiv h3 {
+    background-color: rgba(0, 0, 0, 0.349);
+    color: white;
+    width: 670px;
+    margin:0 auto 20px auto;
+}
+
+.fisrtHeaderDiv h1{
+    height: 100px;
+    line-height: 100px;
+}
+.fisrtHeaderDiv h3 {
+    height: 80px;
+    line-height: 80px;
+}
+
+.fisrtHeaderDiv div {
+    padding: 5%;
+}
+
+.secHeaderDiv{
+    background-color: #333333;
+    height: 60px;
+    line-height: 60px;
+    padding-left: 40px;
+}
+
+.secHeaderDiv a {
+    display: inline-block;
+    margin: 0 30px;
+    color: white;
+    /* width: max-content; */
+    padding: 0 10px;
+    font-size: 18px;
+
+}
+.secHeaderDiv a:hover{
+    background-color: rgb(151, 151, 151);
+}
+
+.productsSection{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-div{
-    border: 2px solid purple;
-    margin: 2%;
-    padding: 1%;
-    width: 500px;
-    height:700px;
+main div{
+    border-left: 7px solid #ac6784;
+    width: 20%;
+    height:900px;
     text-align: center;
-    background-color: antiquewhite;
+    margin: 20px 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+main div img{
+    margin-top: 20px;
+}
+main div h2 {
+    color: #ac6784;
+}
+main div p, .myCardPrice{
+    padding-bottom: 10px;
+    border-bottom: 1px dotted #535353c5 ;
 }
 
-p{
-    width: 470px;
-    height: 100px;
-    overflow: scroll;
+.getButton{
+    background-color: #333333;
+    color: white;
+    text-align: left;
+    border: none;
+    height: 35px;
+    width: 60px;
+    cursor: pointer;
+    background-image: url(search.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
 }
 
-button{
-    margin: 2%;
-    padding: 2%;
+.addButton{
+    background-color: #333333;
+    color: white;
+    border: none;
+    height: 35px;
+    width: fit-content;
+    cursor: pointer;
 }
-
 a{
     text-decoration: none;
     display: block;
 }
 
 input{
-    display: block;
-    margin: 20px auto;
-}
-
-section{
-    background-color: #DDD;
-    padding: 20px;
-}
-
-header{
-    background-color: wheat;
-    padding: 20px;
-    margin: 20px;
-}
-header a{
     display: inline-block;
-    margin: 0 30px;
+    margin: 20px auto;
+    height: 30px;
+    width: 200px;
+    border: 1.5px solid #7e7e7e9a;
+}
+
+.homeSection {
+    background-color: #f5f5f5;
+    width: 100%;
+    height:200px;
+}
+
+main{
+    background-color: #f5f5f5;
+}
+h2{
+    margin-top: 0;
+    padding-top: 20px;
+text-align: center;
+}
+.detailsAncor{
+    background-color: #333333;
+    color: white;
+    width: fit-content;
+    /* text-align: center;
+    align-items: center; */
+    padding: 10px 5px;
+    margin: 0 auto;
+}
+section form{
+    margin:1% 24%;
+}
+.myCardsDiv{
+    height: 500px;
+    padding-bottom: 20px;
+}
+
+.noProducts{
+    color: #ac6784;
+    text-align: center;
+    padding-top: 75px;
+    padding-bottom: 75px;
+    margin: 0;
+}
+
+.titleDet{
+    color: #ac6784;
+}
+
+.divDet{
+    width: 60%;
+    height: fit-content;
+}
+
+.divDet img{
+width: 50%;
+height: 30%;
+}
+section form{
+    margin: 2% 0;
+    display: inline-block;
+}
+
+.btns button {
+    background-color: #333333;
+    color: white;
+    border: none;
+    height: 35px;
+    width: fit-content;
+    cursor: pointer;
+
+}
+.ubdatebtnn {
+
+    background-color: #333333;
+    color: white;
+    border: none;
+    height: 35px;
+    width: fit-content;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+
+}
+.formubpadebtn input{
+    display: block;
+}
+
+.descInput{
+    height: 200px;
+
+}
+
+.homeForm{
+    margin:  auto 24%;
+}
+footer{
+    background-color: #333333;
+    text-align: center;
+    color: white;
+    line-height: 60px;
+    height: 60px;
 }

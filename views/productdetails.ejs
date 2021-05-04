@@ -1,30 +1,57 @@
 <%- include('./layout/header') %>
 
 
-<% data.forEach(data=>{ %>
-
-    <div>
-        <h2><%=data.productname%></h2>
-        <h3><%=data.price%></h3>
-        <img src="<%=data.img%>" alt="">
-        <p><%=data.descrip%></p>
+    <% data.forEach(data=>{ %>
 
 
-        <button class="ubdatebtn">Update</button>
-        <form class="formubpadebtn"  action="/update/<%= data.id%>?_method=put" method="POST" >
-            <input type="text" name="productname" value="<%=data.productname%>">
-            <input type="text" name="price" value="<%=data.price%>">
-            <input type="text" name="img" value="<%=data.img%>">
-            <input type="text" name="descrip" value="<%=data.descrip%>">
-            <button type="submit" >Update</button>
-        
-        </form>
-        <form action="/delete/<%= data.id%>?_method=delete" method="POST" >
-            <button type="submit" >delete</button>
-        
-        </form>
-    </div>
+        <h2>Product details for <span class="titleDet">
+                <%=data.productname%>
+            </span> </h2>
 
-    <% }) %>
+        <section class="productsSection">
 
-<%- include('./layout/footer') %>
+
+            <div class="divDet">
+                <img src="<%=data.img%>" alt="">
+                <h3>Price: <%=data.price%>
+                </h3>
+                <p>
+                    <%=data.descrip%>
+                </p>
+
+
+
+                <section>
+
+                    <section class="btns">
+                        <form action="">
+                            <button id="updateBtn" class="ubdatebtn">UPDATE</button>
+                        </form>
+                        <form action="/delete/<%= data.id%>?_method=delete" method="POST">
+                            <button class="deletebtn" type="submit">DELETE</button>
+
+                        </form>
+                    </section>
+
+                    <form class="formubpadebtn" action="/update/<%= data.id%>?_method=put" method="POST">
+                        Name: <input type="text" name="productname" value="<%=data.productname%>">
+                        Price: <input type="text" name="price" value="<%=data.price%>">
+                        Image Link: <input type="text" name="img" value="<%=data.img%>">
+                        Desc: 
+                        <br>
+                        <br>
+                        <textarea name="" id="" cols="30" rows="10"><%=data.descrip%></textarea>
+                        <br>
+                        <button class="ubdatebtnn" type="submit">UPDATE</button>
+
+                    </form>
+
+
+                </section>
+
+            </div>
+
+            <% }) %>
+
+        </section>
+        <%- include('./layout/footer') %>

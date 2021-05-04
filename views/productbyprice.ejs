@@ -1,15 +1,22 @@
 <%- include('./layout/header') %>
 
+<h2>Maybelline Products range prices</h2>
 
+<section class="productsSection">
 <% data.forEach(data=>{ %>
 
     <div>
-        <h2><%=data.productname%></h2>
-        <h3><%=data.price%></h3>
         <img src="<%=data.img%>" alt="">
+        <h2><%=data.productname%></h2>
+        <h3>Price: <%=data.price%></h3>
         <p><%=data.descrip%></p>
     </div>
 
     <% }) %>
+
+
+</section>
+
+
 
 <%- include('./layout/footer') %>

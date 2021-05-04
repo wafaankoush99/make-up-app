@@ -1,12 +1,16 @@
 <%- include('./layout/header') %>
 
 
-<section>
-    <form action="/productbyprice" method="POST">
-    Search about a brand : <input type="text" name="brand" >
-    price greater than: <input type="number" name="greater" >
-    price less than: <input type="number" name="less" >
-    <button type="submit" >Search</button>
+
+<section class="homeSection" >
+
+    <h2> Get maybelline Products between a range of prices</h2>
+
+    <form class="homeForm" action="/productbyprice" method="POST">
+     <input type="text" placeholder="Add brand name" name="brand" >
+     <input type="number" placeholder="Price greater than" name="greater" >
+     <input type="number" placeholder="Price lower than" name="less" >
+    <button class="getButton" type="submit" >GET</button>
     </form>
 </section>
 
