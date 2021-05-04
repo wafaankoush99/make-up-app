@@ -19,12 +19,12 @@ app.set('view engine', 'ejs');
 // });
 const client = new pg.Client({
     connectionString: process.env.DATABASE_URL,
-    // ssl: process.env.LOCALLY ? false : { rejectUnauthorized: false }
+    ssl: process.env.LOCALLY ? false : { rejectUnauthorized: false }
 });
 const PORT = process.env.PORT || 7000;
 
 
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home');
 });
 
