@@ -84,6 +84,13 @@ main div p, .myCardPrice{
     border-bottom: 1px dotted #535353c5 ;
 }
 
+main div p{
+overflow: auto;
+    height: 400px;
+}
+
+
+
 .getButton{
     background-color: #333333;
     color: white;

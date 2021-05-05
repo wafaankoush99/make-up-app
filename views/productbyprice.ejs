@@ -1,7 +1,10 @@
 <%- include('./layout/header') %>
 
-<h2>Maybelline Products range prices</h2>
 
+
+
+<% if (data.length>0){ %>
+    <h2>Maybelline Products range prices</h2>
 <section class="productsSection">
 <% data.forEach(data=>{ %>
 
@@ -16,6 +19,17 @@
 
 
 </section>
+
+<% } %>
+
+<% if (data.length===0){ %>
+<section class="productsSection">
+    <h1 class="noProducts"> No Products between These Ranges  ㄟ( ▔, ▔ )ㄏ </h1>
+
+
+<% } %>
+
+
 
 
 

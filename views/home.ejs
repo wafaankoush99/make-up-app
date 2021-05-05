@@ -7,11 +7,12 @@
     <h2> Get maybelline Products between a range of prices</h2>
 
     <form class="homeForm" action="/productbyprice" method="POST">
-     <input type="text" placeholder="Add brand name" name="brand" >
+     <input type="text" value="Maybelline" placeholder="Add brand name" name="brand" >
      <input type="number" placeholder="Price greater than" name="greater" >
      <input type="number" placeholder="Price lower than" name="less" >
     <button class="getButton" type="submit" >GET</button>
     </form>
+    
 </section>
 
 <%- include('./layout/footer') %>

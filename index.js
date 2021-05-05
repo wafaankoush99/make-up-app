@@ -12,15 +12,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static('./public'));
 app.set('view engine', 'ejs');
-// const client = new pg.Client(process.env.DATABASE_URL);
-// const client = new pg.Client({
-//     connectionString: process.env.DATABASE_URL,
-//     ssl: { rejectUnauthorized: false }
-// });
+
+
 const client = new pg.Client({
     connectionString: process.env.DATABASE_URL,
-    ssl: process.env.LOCALLY ? false : { rejectUnauthorized: false }
+    ssl: process.env.DEV_MODE ? false : { rejectUnauthorized: false }
 });
+
 const PORT = process.env.PORT || 7000;
 
 
@@ -96,7 +94,6 @@ app.get('/productdetails/:id', (req, res) => {
             res.render('err', { err: err });
         });
 });
-
 
 
 app.put('/update/:id', (req, res) => {
